@@ -1,0 +1,37 @@
+#####     CONTROL FOR ANGLE       ####
+### "THETA_GOAL"  THE THETA TO BE REACHED###
+### SCOMPONGO IL DOVER OTTENERE UN DETERMINATO ANGOLO IN DUE SOTTO-TASK ###
+### 1- RENDI THETA_ATT CONCORDE CON THETA_GOAL ####
+### 2-  RENDI THETA_ATT "SIMILE" A THETA_GOAL  ####
+
+### CON "MUOVI" SI INTENDE                                      ###
+### 1- RUOTARE FINO A CHE LA BUSSOLA NON DA IL GIUSTO VALORE    ###
+### 2- TIRARE DRITTO                                            ###
+
+1-
+SE THETA_GOAL DISCORDE RISPETTO A THETA_ATT (PREDETTO DALLA NN DALL'IMG):
+
+        SE THETA_GOAL > 0:
+                
+                MUOVI_SUD
+
+        SE THETA_GOAL < 0:
+
+                MUOVI_NORD
+
+2-
+ALTRIMENTI (THETA_GOAL CONCORDE THETA_ATT):
+
+        SE THETA_ATT > THETA_GOAL:
+
+                MUOVI_DESTRA
+
+        SE THETA_ATT < THETA_GOAL:
+
+                MUOVI_SINISTRA
+
+
+il tutto dando sempre priorità alla routine di obstacle_avoidance
+
+
+                
